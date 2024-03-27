@@ -119,6 +119,10 @@ pre {
 	border-radius: 10px;
 	cursor: text;
 }
+code {
+	background-color: #ffffdd;
+	cursor: text;
+}
 
 
 
@@ -266,3 +270,8 @@ div.btn_row {
 	width: 75px;
 	margin: 0 auto;
 }
+.solid, .solid tr, .solid td {
+	border: 1px solid black;
+	cursor: text;
+}
+	
