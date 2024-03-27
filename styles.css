@@ -1,0 +1,268 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #eedd77;
+	font-size: 14px;
+}
+header {
+	color: #000;
+	text-align: center;
+	font-size: 8vh;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+	cursor: pointer;
+}
+th, td {
+	padding: 15px;
+	text-align: center;
+}
+th {
+	background-color: #eedd77;
+	border-radius: 10px;
+	transition: background-color 0.27s;
+}
+button {
+	background-color: #eedd77;
+	border: none;
+	border-radius: 10px;
+	width: 100%;
+	height: 45px;
+	transition: background-color 0.27s;
+	cursor: pointer;
+}
+button:hover {
+	background-color: #ffffdd;
+	transition: background-color 0.27s;
+}
+input {
+	background-color: #eedd77;
+	border: 1px solid;
+	border-radius: 10px;
+	width: 98.8%;
+	font-size: 18px;
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 7px;
+	margin-right: 3px;
+	transition: background-color 0.27s;
+}
+input:hover, input:focus {
+	background-color: #ffffdd;
+	transition: background-color 0.27s;
+}
+th:hover {
+	background-color: #ffffdd;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+	background-color: #ebc279;
+	border: 1px solid #000;
+	border-radius: 15px;
+}
+a:hover {
+	background-color: #ffffdd;
+	transition: background-color 0.27s;
+}
+summary {
+	margin-bottom: 10px;
+	background-color: #eedd77;
+	border-radius: 10px;
+	height: 100%;
+	border: solid 1px;
+	list-style: none;
+	cursor: pointer;
+	transition: background-color 0.27s;
+}
+summary:hover {
+	background-color: #ffffdd;
+	transition: background-color 0.27s;
+}
+details{
+	background-color: #eedd77;
+	border-radius: 10px;
+	transition: margin 0.15s ease;
+	padding: 10px;
+	user-select: none;
+	margin-left: 0px;
+}
+details[open] {
+	padding: 10px;
+	background-color: #eedd77;
+	border-radius: 10px;
+	margin-left: 2.5em;
+}
+details[open] summary {
+	background-color: #ebc279;
+	transition: background-color 0.27s;
+}
+details div:not([class]):hover {
+/*Это был селектор любого div в details, не содержащего класс.
+Разделы, имеющие классы, определены ниже.*/
+	background-color: #ffffdd;
+	transition: background-color 0.27s;
+	border-radius: 10px;
+}
+details div.delete:hover {
+	background-color: #ff0000;
+	transition: background-color 0.27s;
+	border-radius: 10px;
+	color: #ffffff;
+	border-color: #000000;
+}
+pre {
+	background-color: #ffffdd;
+	border-radius: 10px;
+	cursor: text;
+}
+
+
+
+
+
+
+
+
+
+.hdiv {
+	border-top-width: 2vh;
+	border-top-color: #ebc279;
+	border-top-style: solid;
+	background-color: #eedd77;
+}
+.deco {
+	background-color: #ffffdd;
+	border-radius: 10px;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+.div {
+	background-color: #eedd77;
+	padding: 10px;
+	border-radius: 10px;
+}
+.container {
+	display: flex;
+	padding: 10px 10px;
+	justify-content: space-between;
+	width: 100%;
+}
+.menu {
+	width: 30%;
+	flex: 0 0 auto;
+	height: 100%;
+	margin-right: 10px;
+	box-sizing: border-box;
+}
+.content {
+	width: calc(70% - 30px);
+	flex: 0 0 auto;
+	height: 86.5vh;
+	overflow-y: scroll;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	box-sizing: border-box;
+	scrollbar-width: none;
+	cursor: default;
+}
+.content div {
+	transition: all 0.27s;
+}
+div.btn_row {
+	display: flex;
+	gap: 20px;
+}
+.content button:not(.critical){
+	background-color: #eedd77;
+	padding: 10px;
+	height: revert;
+	border: 1px solid;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	display: flex;
+}
+.content button:hover:not(.critical) {
+	background-color: #ffffdd;
+	transition: background-color 0.27s;
+	cursor: pointer;
+}
+.content button:not(.critical) span.n{
+	width: 60%;
+}
+.content button:not(.critical) span.v{
+	width: 100%;
+}
+.grey {
+	font-size: 30px;
+	color: #505050;
+}
+.comment .greyComment {
+	font-size: 30px;
+	margin-right: 10px;
+	color: #505050;
+}
+.content button.comment {
+	border: none;
+	text-align: left;
+}
+.comment:hover {
+	background-color: #ffd;
+	transition: background-color 0.27s;
+}
+.modal {
+	position: fixed;
+	background: #ebc279;
+	border: 2px solid #ff0000;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	z-index: 900;
+}
+.modal table tr th.delete {
+	background-color: #ff0000;
+	border-radius: 10px;
+}
+.modal table tr th.delete:hover {
+	background-color: #000000;
+	color: #ffffff;
+	transition: all 0.27s;
+}
+.modal table tr th.empty {
+	background-color: rgba(0, 0, 0, 0);
+	cursor: default;
+}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+}
+.critical {
+	background-color: #ff0000;
+	transition: all 0.27s;
+}
+.critical:hover {
+	color: #ffffff;
+	background-color: #000000;
+	transition: all 0.27s;
+}
+.center {
+	text-align: center;
+	margin: 0 auto;
+}
+.new {
+	width: 75px;
+	margin: 0 auto;
+}
