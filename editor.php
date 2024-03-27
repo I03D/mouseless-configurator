@@ -107,17 +107,21 @@ echo '
 <br><br><br>
 
 <form action="index.php" method="post">
-	<button action="index.php" name="layer" value=":'.( count($_SESSION['code'])+1 ).'">
+	<button type="submit" name="layer" value=":'.( count($_SESSION['code'])+1 ).'">
 		&emsp;Добавить новый слой
 	</button>
+	
+	<button type="submit" name="grid" value="dialog">
+		&emsp;Генерировать слой-сетку
+	</button>
 
-	<button action="index.php" name="download" value="true" >
+	<button type="submit" name="download" value="true" >
 		&emsp;Скачать конфигурацию
 	</button>
 
 	<br><br><br>
 
-	<button type="submit" name="delete" value="all" class="critical">
+	<button type="submit" name="delete" value="all">
 		&emsp;Сбросить код
 	</button>
 </form>';

@@ -22,6 +22,7 @@
 		include 'scripts/deleteDialog.php';
 		include 'scripts/itemDialog.php';
 		include 'scripts/layerDialog.php';
+		include 'scripts/gridDialog.php';
 		
 	?>
 	<div class="deco"> <!-- Этот раздел нужен для красивых

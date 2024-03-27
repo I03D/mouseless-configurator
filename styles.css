@@ -122,6 +122,7 @@ pre {
 code {
 	background-color: #ffffdd;
 	cursor: text;
+	overflow-x: scroll;
 }
 
 
