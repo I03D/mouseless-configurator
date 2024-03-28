@@ -1,5 +1,5 @@
 <?php
-if( isset($_POST['edit']) ) {
+if( isset($_POST['edit']) and !isset($_POST['cancelItem']) ) {
 	if( isset($_POST['line']) ) {		
 		if( substr($_POST['edit'], 0, 1) == '+' ) {
 			$edit = substr($_POST['edit'], 1);
@@ -10,10 +10,10 @@ if( isset($_POST['edit']) ) {
 		}
 		
 		if( $add ) {
-			$x                = array_merge(
-		 						array_slice($_SESSION['code'], 0, $edit),
-								[(string)$_POST['line'].PHP_EOL],
-								array_slice($_SESSION['code'], $edit));
+			$x = array_merge(
+		 		array_slice($_SESSION['code'], 0, $edit),
+				[(string)$_POST['line'].PHP_EOL],
+				array_slice($_SESSION['code'], $edit));
 		
 			#$x = array_splice($_SESSION['code'], (int)$edit, 0, $_POST['line']);
 			#print_r(array_splice($_SESSION['code'], 3, 0, 'test'));
@@ -22,6 +22,8 @@ if( isset($_POST['edit']) ) {
 		} else {
 			$_SESSION['code'][$edit] = (string)$_POST["line"].PHP_EOL;
 		}
+	unset($_POST['edit']);
+	unset($_POST['cancelItem']);
 	} else {
 		$edit = $_POST['edit'];
 		echo '
@@ -31,7 +33,7 @@ if( isset($_POST['edit']) ) {
 				<form action="index.php" method="post">
 					<input type="text" name="line" value="'.htmlspecialchars($_SESSION['code'][$edit]).'" autofocus">
 					<div class="btn_row">
-						<button onclick="location.href=\'?page=editor\'">Отмена</button>
+						<button onclick="location.href=\'?page=editor\'" name="cancelItem">Отмена</button>
 						<input type="hidden" name="edit" value="'.$edit.'">
 						<button type="submit">Отправить</button>
 					</div>

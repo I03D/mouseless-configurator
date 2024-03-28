@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['delete']) and $_POST['delete'] != 'allConfirmed') {
+if(isset($_POST['delete']) and $_POST['delete'] != 'allConfirmed' ) {
 	
 	
 	if (substr($_POST['delete'], -14) == 'layerConfirmed') { // Удаляем весь слой после подтверждения:

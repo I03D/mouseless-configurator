@@ -1,7 +1,7 @@
 <?php
-if(isset($_POST['download']) and $_POST['download'] == 'true') {
+if( isset($_POST['download']) ) {
 	
-	// Создаем временный файл с текстом kuku
+	// Создаем временный файл:
 	
 	$tmp_file = tempnam(sys_get_temp_dir(), 'config.yaml');
 	

@@ -57,17 +57,8 @@ if( isset($_POST['grid']) ) {
 				}
 			}
 		}
+		unset($_POST['grid']);
 	}
-}
-
-# По реализации импорта простого добавления в конец может быть недостаточно
-# в особых случаях, если секция layers окажется закрытой. Хотя и принято
-# оставлять её до конца файла. Тогда придётся находить точную строку конца.
-if( $_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['layer']) ) {
-	array_push($_SESSION['code'], '- name: '.(string)$_POST["layer"].PHP_EOL);
-	array_push($_SESSION['code'], '    passThrough: true'.PHP_EOL);
-	array_push($_SESSION['code'], '    bindings:'.PHP_EOL);
-	# $_SESSION['code'][$pos+1] = '    passThrough:'.PHP_EOL;
 }
 
 ?>
